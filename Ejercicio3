@@ -1,0 +1,31 @@
+use rand::Rng;
+use std::io::stdin;
+fn main(){
+    println!("¡Adivina la lista de números aleatorios!");
+    println!("Si no quieres seguir jugando presiona 'x'");
+    let mut lista_numeros: [i64; 12] = [0; 12];
+    for i in 0..13{
+        let mut rng = rand::thread_rng();           
+        let numeros: i64 = rng.gen_range(0..11);
+        lista_numeros[i] = numeros;
+    }
+
+    let lista_impresa: [&str; 12] = ["*"; 12];
+    
+
+    loop {
+        let mut input = String::new();
+        stdin().read_line(&mut input).expect("expected to read line");
+        while input != "X" || input != "x" {
+            let adivinanza: i64 = input.trim().parse().unwrap();
+            for _x in 0..13{
+                if lista_numeros[_x] == adivinanza{
+                    println!("¡Has descubierto un número!");
+                }
+            }
+
+        } 
+    }
+    
+
+}
