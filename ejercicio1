@@ -1,0 +1,39 @@
+use std::io;
+fn main() {
+    let mut ton: [i64; 12] = [0; 12];
+    
+    for i in 0..12{
+        println!("Ingrese las toneladas del mes {}: ", i+1 );
+        let mut ingreso:String = String::new();
+        io::stdin().read_line(&mut ingreso).expect("expected to read line");
+        let ton_mes: i64 = ingreso.trim().parse().unwrap();
+        ton[i] = ton_mes;
+    }
+
+    let mut suma_ton: i64 = 0;
+    for j in ton{
+        suma_ton += j;
+    }
+
+    let prom_ton :i64 = suma_ton / 12;
+    println!("El promedio anual de toneladas es: {} toneladas.", prom_ton);
+
+    let mut contador = 0;
+
+    for j in ton{
+        if j > prom_ton{
+            contador += 1;
+        }
+    }
+
+    println!("{} meses tuvieron una cosecha superior al promedio anual", contador);
+
+    let mut mayor = ton[0];
+    for i in ton{
+        if i > mayor{
+            mayor = i;
+        }
+    }
+    println!("La mayor cantidad que se produjeron ese año fueron: {}", mayor);
+    
+}
