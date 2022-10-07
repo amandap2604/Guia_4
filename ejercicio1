@@ -8,6 +8,7 @@ fn main() {
         io::stdin().read_line(&mut ingreso).expect("expected to read line");
         let ton_mes: i64 = ingreso.trim().parse().unwrap();
         ton[i] = ton_mes;
+        println!("\n");
     }
 
     let mut suma_ton: i64 = 0;
@@ -16,7 +17,7 @@ fn main() {
     }
 
     let prom_ton :i64 = suma_ton / 12;
-    println!("El promedio anual de toneladas es: {} toneladas.", prom_ton);
+    println!("El promedio anual de toneladas es: {} toneladas.\n", prom_ton);
 
     let mut contador = 0;
 
@@ -26,7 +27,7 @@ fn main() {
         }
     }
 
-    println!("{} meses tuvieron una cosecha superior al promedio anual", contador);
+    println!("{} meses tuvieron una cosecha superior al promedio anual. \n", contador);
 
     let mut mayor = ton[0];
     for i in ton{
@@ -34,6 +35,6 @@ fn main() {
             mayor = i;
         }
     }
-    println!("La mayor cantidad que se produjeron ese año fueron: {}", mayor);
+    println!("La mayor cantidad de toneladas que se produjeron ese año fueron: {}. \n", mayor);
     
 }
