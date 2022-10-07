@@ -1,0 +1,96 @@
+use std::io::stdin;
+fn main() {
+    println!("CONTEO DE VOTOS.");
+    println!("Si desea acabar el conteo ingrese '-1'");
+    let mut almacenamiento_votos: [i64; 25] = [0; 25];
+    
+
+    loop {
+        println!("Ingrese el número del candidato al que va el voto.");
+        let mut input = String::new();
+        stdin().read_line(&mut input).expect("expected to read line");
+        if input != "-1" {
+            let votos: i64 = input.trim().parse().unwrap();
+            if votos == 1{
+                almacenamiento_votos[0] += 1;
+            }
+            if votos == 2{
+                almacenamiento_votos[1] += 1;
+            }
+            if votos == 3{
+                almacenamiento_votos[2] += 1;
+            }
+            if votos == 4{
+                almacenamiento_votos[3] += 1;
+            }
+            if votos == 5{
+                almacenamiento_votos[4] += 1;
+            }
+            if votos == 6{
+                almacenamiento_votos[5] += 1;
+            }
+            if votos == 7{
+                almacenamiento_votos[6] += 1;
+            }
+            if votos == 8{
+                almacenamiento_votos[7] += 1;
+            }
+            if votos == 9{
+                almacenamiento_votos[8] += 1;
+            }
+            if votos == 10{
+                almacenamiento_votos[9] += 1;
+            }
+            if votos == 11{
+                almacenamiento_votos[10] += 1;
+            }
+            if votos == 12{
+                almacenamiento_votos[11] += 1;
+            }
+            if votos == 13{
+                almacenamiento_votos[12] += 1;
+            }
+            if votos == 14{
+                almacenamiento_votos[13] += 1;
+            }
+            if votos == 15{
+                almacenamiento_votos[14] += 1;
+            }
+            if votos == 16{
+                almacenamiento_votos[15] += 1;
+            }
+            if votos == 17{
+                almacenamiento_votos[16] += 1;
+            }
+            if votos == 18{
+                almacenamiento_votos[17] += 1;
+            }
+            if votos == 19{
+                almacenamiento_votos[18] += 1;
+            }
+            if votos == 20{
+                almacenamiento_votos[19] += 1;
+            }
+            if votos == 21{
+                almacenamiento_votos[20] += 1;
+            }
+            if votos == 22{
+                almacenamiento_votos[21] += 1;
+            }
+            if votos == 23{
+                almacenamiento_votos[22] += 1;
+            }
+            if votos == 24{
+                almacenamiento_votos[23] += 1;
+            }
+            if votos == 25{
+                almacenamiento_votos[24] += 1;
+            }
+            println!("{:?}", almacenamiento_votos);
+    
+        }if input == "-1"{
+            break;
+        }
+
+    }
+}
